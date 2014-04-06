@@ -48,10 +48,9 @@
         End If
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdRandom.Click
+    Private Sub cmdRandom_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdRandom.Click
         randomise()
     End Sub
-
     Private Sub timerColour_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles timerColour.Tick
         randomise()
         loopCount += 1
@@ -203,7 +202,7 @@
     Private Sub AboutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AboutToolStripMenuItem.Click
         MsgBox("This program gives you the ability to generate colours and save then, it automatically comes with a RGB to hex convertion")
     End Sub
-    Private Sub PictureBox10_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBox10.Click
+    Private Sub PictureBox10_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=zackdavidson2011%40hotmail%2eco%2euk&lc=GB&item_name=Colourz&no_note=0&currency_code=GBP&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest")
     End Sub
 
@@ -215,7 +214,7 @@
         rtbSaved.BackColor = Color.Black
     End Sub
 
-    Private Sub txtHex_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtHex.TextChanged
-
+    Private Sub DonateToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DonateToolStripMenuItem.Click
+        Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=zackdavidson2011%40hotmail%2eco%2euk&lc=GB&item_name=Colourz&no_note=0&currency_code=GBP&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest")
     End Sub
 End Class
