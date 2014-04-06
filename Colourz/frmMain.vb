@@ -9,25 +9,16 @@
         picOutput.BackColor = Color.FromArgb(trackRed.Value, trackGreen.Value, trackBlue.Value)
         txtRGB.Text = trackRed.Value & ", " & trackGreen.Value & ", " & trackBlue.Value
         txtRed.Text = trackRed.Value
-        trackRed.BackColor = picOutput.BackColor
-        trackGreen.BackColor = picOutput.BackColor
-        trackBlue.BackColor = picOutput.BackColor
     End Sub
     Private Sub trackGreen_Scroll(ByVal sender As Object, ByVal e As EventArgs) Handles trackGreen.Scroll
         picOutput.BackColor = Color.FromArgb(trackRed.Value, trackGreen.Value, trackBlue.Value)
         txtRGB.Text = trackRed.Value & ", " & trackGreen.Value & ", " & trackBlue.Value
         txtGreen.Text = trackGreen.Value
-        trackRed.BackColor = picOutput.BackColor
-        trackGreen.BackColor = picOutput.BackColor
-        trackBlue.BackColor = picOutput.BackColor
     End Sub
     Private Sub trackBlue_Scroll(ByVal sender As Object, ByVal e As EventArgs) Handles trackBlue.Scroll
         picOutput.BackColor = Color.FromArgb(trackRed.Value, trackGreen.Value, trackBlue.Value)
         txtRGB.Text = trackRed.Value & ", " & trackGreen.Value & ", " & trackBlue.Value
         txtBlue.Text = trackBlue.Value
-        trackRed.BackColor = picOutput.BackColor
-        trackGreen.BackColor = picOutput.BackColor
-        trackBlue.BackColor = picOutput.BackColor
     End Sub
     Private Sub cmdCopy_Click(ByVal sender As Object, ByVal e As EventArgs) Handles cmdCopy.Click
         My.Computer.Clipboard.SetText(txtRGB.Text)
@@ -52,9 +43,6 @@
         picOutput.BackColor = Color.FromArgb(trackRed.Value, trackGreen.Value, trackBlue.Value)
         txtRGB.Text = trackRed.Value & ", " & trackGreen.Value & ", " & trackBlue.Value
         txtHex.Text = intHex
-        trackRed.BackColor = picOutput.BackColor
-        trackGreen.BackColor = picOutput.BackColor
-        trackBlue.BackColor = picOutput.BackColor
         If chbSaveAsGo.Checked = True Then
             saveColour()
         End If
@@ -111,7 +99,7 @@
         Dim intHex As String = ColorTranslator.ToHtml(Color.FromArgb(trackRed.Value, trackGreen.Value, trackBlue.Value))
         txtHex.Text = intHex
     End Sub
-    Private Sub cmdCustomise_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub cmdCustomise_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdCustomise.Click
         TabControl.SelectTab(2)
     End Sub
     Private Sub saveColour()
