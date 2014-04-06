@@ -1,0 +1,1 @@
+Colourz is now an open source program. Anyone can see the code. Its main purpose is to generate colours and translate them between RGB and HEX, You can download it here: http://download.cnet.com/Colourz/3000-2352_4-76115837.html
