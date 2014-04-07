@@ -1,12 +1,15 @@
 ﻿Public Class frmMain
 
     Dim loopCount As Integer
+    Dim saveCounter As Integer = 0
+
+    Private Declare Function GetKeyPress Lib "user32" Alias "GetAsyncKeyState" (ByVal key As Integer) As Integer
 
     Private Sub UpdatescomingSoonToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UpdatescomingSoonToolStripMenuItem.Click
         checkForUpdates()
     End Sub
 
-    Private Sub updateColours()
+    Private Sub updateColour()
         picOutput.BackColor = Color.FromArgb(trackRed.Value, trackGreen.Value, trackBlue.Value)
         txtRGB.Text = trackRed.Value & ", " & trackGreen.Value & ", " & trackBlue.Value
         txtRed.Text = trackRed.Value
@@ -15,15 +18,15 @@
     End Sub
 
     Private Sub trackRed_Scroll(ByVal sender As Object, ByVal e As EventArgs) Handles trackRed.Scroll
-        updateColours()
+        updateColour()
     End Sub
 
     Private Sub trackGreen_Scroll(ByVal sender As Object, ByVal e As EventArgs) Handles trackGreen.Scroll
-        updateColours()
+        updateColour()
     End Sub
 
     Private Sub trackBlue_Scroll(ByVal sender As Object, ByVal e As EventArgs) Handles trackBlue.Scroll
-        updateColours()
+        updateColour()
     End Sub
 
     Private Sub cmdCopy_Click(ByVal sender As Object, ByVal e As EventArgs) Handles cmdCopy.Click
@@ -238,5 +241,54 @@
 
     Private Sub DonateToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DonateToolStripMenuItem.Click
         Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=zackdavidson2011%40hotmail%2eco%2euk&lc=GB&item_name=Colourz&no_note=0&currency_code=GBP&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest")
+    End Sub
+
+    Private Sub cmdStartCC_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdStartCC.Click
+        timerStartCC.Start()
+        frmColourPicker.Show()
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub cmdStopCC_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdStopCC.Click
+        timerStartCC.Stop()
+        Me.WindowState = FormWindowState.Normal
+        frmColourPicker.Hide()
+    End Sub
+
+    Private Sub timerChk_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles timerChk.Tick
+        If (GetKeyPress(116)) Then 'F5 shortcut
+            timerSave.Start()
+        End If
+            If (GetKeyPress(117)) Then 'F6 Shortcut
+                timerStartCC.Start()
+                Me.WindowState = FormWindowState.Minimized
+                frmColourPicker.Show()
+            End If
+            If (GetKeyPress(118)) Then 'F7 Shortcut
+                timerStartCC.Stop()
+                Me.WindowState = FormWindowState.Normal
+                frmColourPicker.Hide()
+            End If
+    End Sub
+
+    Private Sub timerStartCC_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles timerStartCC.Tick
+        Dim BMP As New Drawing.Bitmap(1, 1)
+        Dim GFX As System.Drawing.Graphics = System.Drawing.Graphics.FromImage(BMP)
+        GFX.CopyFromScreen(New Drawing.Point(MousePosition.X, MousePosition.Y), New Drawing.Point(0, 0), BMP.Size)
+        Dim Pixel As Drawing.Color = BMP.GetPixel(0, 0)
+        picOutput.BackColor = Pixel
+        frmColourPicker.BackColor = Pixel
+        txtRed.Text = Pixel.R
+        txtGreen.Text = Pixel.G
+        txtBlue.Text = Pixel.B
+    End Sub
+
+    Private Sub timerSave_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles timerSave.Tick
+        saveColour()
+        timerSave.Stop()
+    End Sub
+
+    Private Sub TabControl_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TabControl.SelectedIndexChanged
+
     End Sub
 End Class
