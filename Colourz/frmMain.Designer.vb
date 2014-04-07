@@ -33,18 +33,12 @@ Partial Class frmMain
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.DonateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CheckForUpdatesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.timerColour = New System.Windows.Forms.Timer(Me.components)
         Me.tabNew = New System.Windows.Forms.TabPage()
         Me.txtWhatsNew = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.tabCustomise = New System.Windows.Forms.TabPage()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.chbSaveAsGo = New System.Windows.Forms.CheckBox()
-        Me.rdbMil = New System.Windows.Forms.RadioButton()
-        Me.nudTime = New System.Windows.Forms.NumericUpDown()
-        Me.rdbSeconds = New System.Windows.Forms.RadioButton()
         Me.tabHelp = New System.Windows.Forms.TabPage()
         Me.tabControlHelp = New System.Windows.Forms.TabControl()
         Me.tabRGB = New System.Windows.Forms.TabPage()
@@ -65,10 +59,10 @@ Partial Class frmMain
         Me.txtBlue = New System.Windows.Forms.TextBox()
         Me.txtGreen = New System.Windows.Forms.TextBox()
         Me.txtRed = New System.Windows.Forms.TextBox()
+        Me.picOutput = New System.Windows.Forms.PictureBox()
         Me.cmdSave = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.lblLoopCount = New System.Windows.Forms.Label()
-        Me.cmdCustomise = New System.Windows.Forms.Button()
         Me.cmdRandom = New System.Windows.Forms.Button()
         Me.cmdStop = New System.Windows.Forms.Button()
         Me.cmdStart = New System.Windows.Forms.Button()
@@ -84,30 +78,32 @@ Partial Class frmMain
         Me.cmdCopy = New System.Windows.Forms.Button()
         Me.TabControl = New System.Windows.Forms.TabControl()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.picOutput = New System.Windows.Forms.PictureBox()
-        Me.DonateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.chbSaveAsGo = New System.Windows.Forms.CheckBox()
+        Me.rdbMil = New System.Windows.Forms.RadioButton()
+        Me.nudTime = New System.Windows.Forms.NumericUpDown()
+        Me.rdbSeconds = New System.Windows.Forms.RadioButton()
         Me.MenuStrip1.SuspendLayout()
         Me.tabNew.SuspendLayout()
-        Me.tabCustomise.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
-        CType(Me.nudTime, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabHelp.SuspendLayout()
         Me.tabControlHelp.SuspendLayout()
         Me.tabRGB.SuspendLayout()
         Me.tabColours.SuspendLayout()
         Me.tabSaveColours.SuspendLayout()
         Me.tabColourPage.SuspendLayout()
+        CType(Me.picOutput, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.trackRed, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.trackGreen, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.trackBlue, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl.SuspendLayout()
-        CType(Me.picOutput, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.nudTime, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.CheckForUpdatesToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(752, 24)
@@ -161,17 +157,17 @@ Partial Class frmMain
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
         Me.ToolStripSeparator2.Size = New System.Drawing.Size(170, 6)
         '
+        'DonateToolStripMenuItem
+        '
+        Me.DonateToolStripMenuItem.Name = "DonateToolStripMenuItem"
+        Me.DonateToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.DonateToolStripMenuItem.Text = "Donate"
+        '
         'ExitToolStripMenuItem2
         '
         Me.ExitToolStripMenuItem2.Name = "ExitToolStripMenuItem2"
         Me.ExitToolStripMenuItem2.Size = New System.Drawing.Size(173, 22)
         Me.ExitToolStripMenuItem2.Text = "Exit"
-        '
-        'CheckForUpdatesToolStripMenuItem
-        '
-        Me.CheckForUpdatesToolStripMenuItem.Name = "CheckForUpdatesToolStripMenuItem"
-        Me.CheckForUpdatesToolStripMenuItem.Size = New System.Drawing.Size(116, 20)
-        Me.CheckForUpdatesToolStripMenuItem.Text = "Check for Updates"
         '
         'timerColour
         '
@@ -211,76 +207,6 @@ Partial Class frmMain
         Me.Label3.Size = New System.Drawing.Size(166, 29)
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Whats new list"
-        '
-        'tabCustomise
-        '
-        Me.tabCustomise.BackColor = System.Drawing.Color.White
-        Me.tabCustomise.Controls.Add(Me.GroupBox1)
-        Me.tabCustomise.Location = New System.Drawing.Point(4, 22)
-        Me.tabCustomise.Name = "tabCustomise"
-        Me.tabCustomise.Size = New System.Drawing.Size(748, 296)
-        Me.tabCustomise.TabIndex = 5
-        Me.tabCustomise.Text = "Customise"
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.chbSaveAsGo)
-        Me.GroupBox1.Controls.Add(Me.rdbMil)
-        Me.GroupBox1.Controls.Add(Me.nudTime)
-        Me.GroupBox1.Controls.Add(Me.rdbSeconds)
-        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!)
-        Me.GroupBox1.Location = New System.Drawing.Point(3, 3)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(299, 73)
-        Me.GroupBox1.TabIndex = 28
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Random Colour generator speed"
-        '
-        'chbSaveAsGo
-        '
-        Me.chbSaveAsGo.AutoSize = True
-        Me.chbSaveAsGo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!)
-        Me.chbSaveAsGo.Location = New System.Drawing.Point(6, 48)
-        Me.chbSaveAsGo.Name = "chbSaveAsGo"
-        Me.chbSaveAsGo.Size = New System.Drawing.Size(215, 21)
-        Me.chbSaveAsGo.TabIndex = 28
-        Me.chbSaveAsGo.Text = "Save colours when generated"
-        Me.chbSaveAsGo.UseVisualStyleBackColor = True
-        '
-        'rdbMil
-        '
-        Me.rdbMil.AutoSize = True
-        Me.rdbMil.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!)
-        Me.rdbMil.Location = New System.Drawing.Point(101, 19)
-        Me.rdbMil.Name = "rdbMil"
-        Me.rdbMil.Size = New System.Drawing.Size(110, 21)
-        Me.rdbMil.TabIndex = 25
-        Me.rdbMil.Text = "Millieseconds"
-        Me.rdbMil.UseVisualStyleBackColor = True
-        '
-        'nudTime
-        '
-        Me.nudTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!)
-        Me.nudTime.Location = New System.Drawing.Point(217, 19)
-        Me.nudTime.Maximum = New Decimal(New Integer() {60000, 0, 0, 0})
-        Me.nudTime.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.nudTime.Name = "nudTime"
-        Me.nudTime.Size = New System.Drawing.Size(75, 23)
-        Me.nudTime.TabIndex = 27
-        Me.nudTime.Value = New Decimal(New Integer() {1, 0, 0, 0})
-        '
-        'rdbSeconds
-        '
-        Me.rdbSeconds.AutoSize = True
-        Me.rdbSeconds.Checked = True
-        Me.rdbSeconds.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!)
-        Me.rdbSeconds.Location = New System.Drawing.Point(6, 19)
-        Me.rdbSeconds.Name = "rdbSeconds"
-        Me.rdbSeconds.Size = New System.Drawing.Size(81, 21)
-        Me.rdbSeconds.TabIndex = 26
-        Me.rdbSeconds.TabStop = True
-        Me.rdbSeconds.Text = "Seconds"
-        Me.rdbSeconds.UseVisualStyleBackColor = True
         '
         'tabHelp
         '
@@ -456,10 +382,11 @@ Partial Class frmMain
         'tabColourPage
         '
         Me.tabColourPage.BackColor = System.Drawing.Color.White
+        Me.tabColourPage.Controls.Add(Me.picOutput)
+        Me.tabColourPage.Controls.Add(Me.GroupBox1)
         Me.tabColourPage.Controls.Add(Me.txtBlue)
         Me.tabColourPage.Controls.Add(Me.txtGreen)
         Me.tabColourPage.Controls.Add(Me.txtRed)
-        Me.tabColourPage.Controls.Add(Me.picOutput)
         Me.tabColourPage.Controls.Add(Me.cmdSave)
         Me.tabColourPage.Controls.Add(Me.GroupBox2)
         Me.tabColourPage.Controls.Add(Me.lblBlue)
@@ -509,12 +436,21 @@ Partial Class frmMain
         Me.txtRed.TabIndex = 34
         Me.txtRed.Text = "0"
         '
+        'picOutput
+        '
+        Me.picOutput.BackColor = System.Drawing.Color.Black
+        Me.picOutput.Location = New System.Drawing.Point(2, 140)
+        Me.picOutput.Name = "picOutput"
+        Me.picOutput.Size = New System.Drawing.Size(231, 113)
+        Me.picOutput.TabIndex = 6
+        Me.picOutput.TabStop = False
+        '
         'cmdSave
         '
-        Me.cmdSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!)
-        Me.cmdSave.Location = New System.Drawing.Point(535, 147)
+        Me.cmdSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.25!)
+        Me.cmdSave.Location = New System.Drawing.Point(243, 140)
         Me.cmdSave.Name = "cmdSave"
-        Me.cmdSave.Size = New System.Drawing.Size(101, 29)
+        Me.cmdSave.Size = New System.Drawing.Size(494, 36)
         Me.cmdSave.TabIndex = 13
         Me.cmdSave.Text = "Save colour"
         Me.cmdSave.UseVisualStyleBackColor = True
@@ -522,13 +458,13 @@ Partial Class frmMain
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.lblLoopCount)
-        Me.GroupBox2.Controls.Add(Me.cmdCustomise)
         Me.GroupBox2.Controls.Add(Me.cmdRandom)
         Me.GroupBox2.Controls.Add(Me.cmdStop)
         Me.GroupBox2.Controls.Add(Me.cmdStart)
-        Me.GroupBox2.Location = New System.Drawing.Point(414, 182)
+        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!)
+        Me.GroupBox2.Location = New System.Drawing.Point(233, 182)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(323, 71)
+        Me.GroupBox2.Size = New System.Drawing.Size(235, 71)
         Me.GroupBox2.TabIndex = 33
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Random Colours"
@@ -543,20 +479,10 @@ Partial Class frmMain
         Me.lblLoopCount.TabIndex = 31
         Me.lblLoopCount.Text = "Looped 0 times"
         '
-        'cmdCustomise
-        '
-        Me.cmdCustomise.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!)
-        Me.cmdCustomise.Location = New System.Drawing.Point(110, 36)
-        Me.cmdCustomise.Name = "cmdCustomise"
-        Me.cmdCustomise.Size = New System.Drawing.Size(81, 29)
-        Me.cmdCustomise.TabIndex = 32
-        Me.cmdCustomise.Text = "Customise"
-        Me.cmdCustomise.UseVisualStyleBackColor = True
-        '
         'cmdRandom
         '
         Me.cmdRandom.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!)
-        Me.cmdRandom.Location = New System.Drawing.Point(197, 36)
+        Me.cmdRandom.Location = New System.Drawing.Point(110, 36)
         Me.cmdRandom.Name = "cmdRandom"
         Me.cmdRandom.Size = New System.Drawing.Size(121, 29)
         Me.cmdRandom.TabIndex = 28
@@ -693,7 +619,6 @@ Partial Class frmMain
         '
         Me.TabControl.Controls.Add(Me.tabColourPage)
         Me.TabControl.Controls.Add(Me.tabSaveColours)
-        Me.TabControl.Controls.Add(Me.tabCustomise)
         Me.TabControl.Controls.Add(Me.tabHelp)
         Me.TabControl.Controls.Add(Me.tabNew)
         Me.TabControl.Location = New System.Drawing.Point(-1, 25)
@@ -709,22 +634,67 @@ Partial Class frmMain
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(78, 13)
         Me.Label4.TabIndex = 15
-        Me.Label4.Text = "Version 0.8.0.0"
+        Me.Label4.Text = "Version 0.9.0.0"
         '
-        'picOutput
+        'GroupBox1
         '
-        Me.picOutput.BackColor = System.Drawing.Color.Black
-        Me.picOutput.Location = New System.Drawing.Point(2, 136)
-        Me.picOutput.Name = "picOutput"
-        Me.picOutput.Size = New System.Drawing.Size(406, 117)
-        Me.picOutput.TabIndex = 6
-        Me.picOutput.TabStop = False
+        Me.GroupBox1.Controls.Add(Me.chbSaveAsGo)
+        Me.GroupBox1.Controls.Add(Me.rdbMil)
+        Me.GroupBox1.Controls.Add(Me.nudTime)
+        Me.GroupBox1.Controls.Add(Me.rdbSeconds)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!)
+        Me.GroupBox1.Location = New System.Drawing.Point(474, 182)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(271, 73)
+        Me.GroupBox1.TabIndex = 37
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Random Colour generator speed"
         '
-        'DonateToolStripMenuItem
+        'chbSaveAsGo
         '
-        Me.DonateToolStripMenuItem.Name = "DonateToolStripMenuItem"
-        Me.DonateToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
-        Me.DonateToolStripMenuItem.Text = "Donate"
+        Me.chbSaveAsGo.AutoSize = True
+        Me.chbSaveAsGo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!)
+        Me.chbSaveAsGo.Location = New System.Drawing.Point(6, 48)
+        Me.chbSaveAsGo.Name = "chbSaveAsGo"
+        Me.chbSaveAsGo.Size = New System.Drawing.Size(215, 21)
+        Me.chbSaveAsGo.TabIndex = 28
+        Me.chbSaveAsGo.Text = "Save colours when generated"
+        Me.chbSaveAsGo.UseVisualStyleBackColor = True
+        '
+        'rdbMil
+        '
+        Me.rdbMil.AutoSize = True
+        Me.rdbMil.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!)
+        Me.rdbMil.Location = New System.Drawing.Point(101, 19)
+        Me.rdbMil.Name = "rdbMil"
+        Me.rdbMil.Size = New System.Drawing.Size(110, 21)
+        Me.rdbMil.TabIndex = 25
+        Me.rdbMil.Text = "Millieseconds"
+        Me.rdbMil.UseVisualStyleBackColor = True
+        '
+        'nudTime
+        '
+        Me.nudTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!)
+        Me.nudTime.Location = New System.Drawing.Point(217, 19)
+        Me.nudTime.Maximum = New Decimal(New Integer() {60000, 0, 0, 0})
+        Me.nudTime.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.nudTime.Name = "nudTime"
+        Me.nudTime.Size = New System.Drawing.Size(54, 23)
+        Me.nudTime.TabIndex = 27
+        Me.nudTime.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'rdbSeconds
+        '
+        Me.rdbSeconds.AutoSize = True
+        Me.rdbSeconds.Checked = True
+        Me.rdbSeconds.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!)
+        Me.rdbSeconds.Location = New System.Drawing.Point(6, 19)
+        Me.rdbSeconds.Name = "rdbSeconds"
+        Me.rdbSeconds.Size = New System.Drawing.Size(81, 21)
+        Me.rdbSeconds.TabIndex = 26
+        Me.rdbSeconds.TabStop = True
+        Me.rdbSeconds.Text = "Seconds"
+        Me.rdbSeconds.UseVisualStyleBackColor = True
         '
         'frmMain
         '
@@ -745,10 +715,6 @@ Partial Class frmMain
         Me.MenuStrip1.PerformLayout()
         Me.tabNew.ResumeLayout(False)
         Me.tabNew.PerformLayout()
-        Me.tabCustomise.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        CType(Me.nudTime, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabHelp.ResumeLayout(False)
         Me.tabControlHelp.ResumeLayout(False)
         Me.tabRGB.ResumeLayout(False)
@@ -757,13 +723,16 @@ Partial Class frmMain
         Me.tabSaveColours.ResumeLayout(False)
         Me.tabColourPage.ResumeLayout(False)
         Me.tabColourPage.PerformLayout()
+        CType(Me.picOutput, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.trackRed, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.trackGreen, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.trackBlue, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl.ResumeLayout(False)
-        CType(Me.picOutput, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        CType(Me.nudTime, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -781,11 +750,6 @@ Partial Class frmMain
     Friend WithEvents tabNew As System.Windows.Forms.TabPage
     Friend WithEvents txtWhatsNew As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents tabCustomise As System.Windows.Forms.TabPage
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents rdbMil As System.Windows.Forms.RadioButton
-    Friend WithEvents nudTime As System.Windows.Forms.NumericUpDown
-    Friend WithEvents rdbSeconds As System.Windows.Forms.RadioButton
     Friend WithEvents tabHelp As System.Windows.Forms.TabPage
     Friend WithEvents tabControlHelp As System.Windows.Forms.TabControl
     Friend WithEvents tabRGB As System.Windows.Forms.TabPage
@@ -799,7 +763,6 @@ Partial Class frmMain
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents tabSaveColours As System.Windows.Forms.TabPage
     Friend WithEvents tabColourPage As System.Windows.Forms.TabPage
-    Friend WithEvents cmdCustomise As System.Windows.Forms.Button
     Friend WithEvents cmdStart As System.Windows.Forms.Button
     Friend WithEvents cmdStop As System.Windows.Forms.Button
     Friend WithEvents cmdRandom As System.Windows.Forms.Button
@@ -823,12 +786,15 @@ Partial Class frmMain
     Friend WithEvents txtGreen As System.Windows.Forms.TextBox
     Friend WithEvents txtRed As System.Windows.Forms.TextBox
     Friend WithEvents lblLoopCount As System.Windows.Forms.Label
-    Friend WithEvents CheckForUpdatesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents cmdBlack As System.Windows.Forms.Button
     Friend WithEvents cmdWhite As System.Windows.Forms.Button
-    Friend WithEvents chbSaveAsGo As System.Windows.Forms.CheckBox
     Friend WithEvents DonateToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents chbSaveAsGo As System.Windows.Forms.CheckBox
+    Friend WithEvents rdbMil As System.Windows.Forms.RadioButton
+    Friend WithEvents nudTime As System.Windows.Forms.NumericUpDown
+    Friend WithEvents rdbSeconds As System.Windows.Forms.RadioButton
 
 End Class

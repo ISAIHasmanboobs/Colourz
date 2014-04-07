@@ -129,6 +129,9 @@ Removed all the Icons that where at the top of every tab to reduce application s
 Resized the Window
 Removed the donate tab
 Added a donate button in the Menu bar
+Removed Customise tab and moved options in colour generator tab
+colour generator tab fixed up
+Removed 'Check for updates' next to Menu option
 
 V0.8.0.0
 Fixed the Saved colours customise button
