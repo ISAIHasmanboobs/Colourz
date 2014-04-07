@@ -124,7 +124,10 @@
     <value>113, -1</value>
   </metadata>
   <data name="txtWhatsNew.Text" xml:space="preserve">
-    <value>V0.9.0.0
+    <value>V0.9.0.1
+Removed Donate picture to reduce size
+
+V0.9.0.0
 Removed all the Icons that where at the top of every tab to reduce application size
 Resized the Window
 Removed the donate tab

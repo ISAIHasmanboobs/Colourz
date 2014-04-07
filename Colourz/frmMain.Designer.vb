@@ -56,8 +56,10 @@ Partial Class frmMain
         Me.cmdReset = New System.Windows.Forms.Button()
         Me.rtbSaved = New System.Windows.Forms.RichTextBox()
         Me.tabColourPage = New System.Windows.Forms.TabPage()
+        Me.txtSave = New System.Windows.Forms.TextBox()
         Me.cmdStopCC = New System.Windows.Forms.Button()
         Me.cmdStartCC = New System.Windows.Forms.Button()
+        Me.picOutput = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.chbSaveAsGo = New System.Windows.Forms.CheckBox()
         Me.rdbMil = New System.Windows.Forms.RadioButton()
@@ -86,8 +88,6 @@ Partial Class frmMain
         Me.Label4 = New System.Windows.Forms.Label()
         Me.timerStartCC = New System.Windows.Forms.Timer(Me.components)
         Me.timerChk = New System.Windows.Forms.Timer(Me.components)
-        Me.picOutput = New System.Windows.Forms.PictureBox()
-        Me.txtSave = New System.Windows.Forms.TextBox()
         Me.timerSave = New System.Windows.Forms.Timer(Me.components)
         Me.MenuStrip1.SuspendLayout()
         Me.tabNew.SuspendLayout()
@@ -97,6 +97,7 @@ Partial Class frmMain
         Me.tabColours.SuspendLayout()
         Me.tabSaveColours.SuspendLayout()
         Me.tabColourPage.SuspendLayout()
+        CType(Me.picOutput, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.nudTime, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -104,7 +105,6 @@ Partial Class frmMain
         CType(Me.trackGreen, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.trackBlue, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl.SuspendLayout()
-        CType(Me.picOutput, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -415,6 +415,14 @@ Partial Class frmMain
         Me.tabColourPage.TabIndex = 1
         Me.tabColourPage.Text = "Colour Generator"
         '
+        'txtSave
+        '
+        Me.txtSave.Location = New System.Drawing.Point(3, 230)
+        Me.txtSave.Name = "txtSave"
+        Me.txtSave.Size = New System.Drawing.Size(100, 20)
+        Me.txtSave.TabIndex = 40
+        Me.txtSave.Visible = False
+        '
         'cmdStopCC
         '
         Me.cmdStopCC.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.25!)
@@ -434,6 +442,15 @@ Partial Class frmMain
         Me.cmdStartCC.TabIndex = 38
         Me.cmdStartCC.Text = "Choose colour (F6)"
         Me.cmdStartCC.UseVisualStyleBackColor = True
+        '
+        'picOutput
+        '
+        Me.picOutput.BackColor = System.Drawing.Color.Black
+        Me.picOutput.Location = New System.Drawing.Point(2, 140)
+        Me.picOutput.Name = "picOutput"
+        Me.picOutput.Size = New System.Drawing.Size(231, 113)
+        Me.picOutput.TabIndex = 6
+        Me.picOutput.TabStop = False
         '
         'GroupBox1
         '
@@ -725,23 +742,6 @@ Partial Class frmMain
         Me.timerChk.Enabled = True
         Me.timerChk.Interval = 5
         '
-        'picOutput
-        '
-        Me.picOutput.BackColor = System.Drawing.Color.Black
-        Me.picOutput.Location = New System.Drawing.Point(2, 140)
-        Me.picOutput.Name = "picOutput"
-        Me.picOutput.Size = New System.Drawing.Size(231, 113)
-        Me.picOutput.TabIndex = 6
-        Me.picOutput.TabStop = False
-        '
-        'txtSave
-        '
-        Me.txtSave.Location = New System.Drawing.Point(3, 230)
-        Me.txtSave.Name = "txtSave"
-        Me.txtSave.Size = New System.Drawing.Size(100, 20)
-        Me.txtSave.TabIndex = 40
-        Me.txtSave.Visible = False
-        '
         'timerSave
         '
         '
@@ -772,6 +772,7 @@ Partial Class frmMain
         Me.tabSaveColours.ResumeLayout(False)
         Me.tabColourPage.ResumeLayout(False)
         Me.tabColourPage.PerformLayout()
+        CType(Me.picOutput, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.nudTime, System.ComponentModel.ISupportInitialize).EndInit()
@@ -781,7 +782,6 @@ Partial Class frmMain
         CType(Me.trackGreen, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.trackBlue, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl.ResumeLayout(False)
-        CType(Me.picOutput, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
