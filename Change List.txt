@@ -1,0 +1,52 @@
+V0.9.0.0
+Removed all the Icons that where at the top of every tab to reduce application size
+Resized the Window
+Removed the donate tab
+Added a donate button in the Menu bar
+Removed Customise tab and moved options in colour generator tab
+colour generator tab fixed up
+Removed 'Check for updates' next to Menu option
+Added new colour picker feature
+
+V0.8.0.0
+Fixed the Saved colours customise button
+Deleted the Customise button in saved colours tab
+Moved the Black Background and White background from customise tab to Saved Colours tab
+Changed the size of the buttons in Saved colours tab
+Deleted the Saved colours group box in customise tab
+Saved colours when generated checkbox added to customise
+Changed loop text to Looped AMOUNT times
+Fixed Minus Values on Custom colours text boxes
+Changed the size of the Customise objects
+You no longer copy the # when copying hex code to clipboard
+Fixed Sizes of Copy to clipboard buttons
+
+V0.7.0.0
+Removed Large colour preview tab
+Removed Large colour preview tab from help section
+Changed location of Whats new and help tab
+Changed Application details
+Added Version list in the top right corner
+Added a link to our website in menu bar
+Added check for updates next to Menu button
+Changed whats new text box to no border.
+Changed the Saved colours text box to a borderless textbox
+Fixed about button in the Menu bar
+Deleted the 'Our plans' Button in the Menu bar
+Donation tab added
+
+V0.6.0.0
+The Whats new Tab has been added
+Fixed Opacity when you have errors checking for updates
+Saving pallets have been removed
+Saving colours have been added
+Help tab has been adjusted
+A few adjustments have been made to some of the pictures
+Added 3 new text boxes to enter custom values
+Colour Generator tab has been reworked and changed
+New customise buttons have been added
+Saved colours have now black and white background, what ever your choice is
+Reset text for saved colours has been added
+
+V0.5.0.0
+First Release
